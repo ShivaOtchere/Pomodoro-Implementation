@@ -1,0 +1,552 @@
+JavaScript
+JavaScript is a scripting language you can use to make web pages interactive. It is one of the core technologies of the web, along with HTML and CSS, and is supported by all modern browsers.
+
+Comments
+Use // for single line comment and /* */ for multiline comments
+statements are terminated with a colon :
+
+
+Variables
+Eight different types
+undefined, null, boolean, string, symbol, bigint, number, object
+Strings are surrounded by either single or double quotes.
+Note that strings are immutable
+Variables allow manupulation of data in a dynamic fashion by useing a label to point to the data rather than using the data itself. 
+Declare a variable
+Use var variableName to create a variable. 
+Variable names can be made up of numbers, letters $ or _ but no spaces. It cannot start with a number
+initialise a variable as you would normally. 
+var myVar;
+myVar = 5;
+
+or var myVar =5;
+var name = "Shiva";    //over here, "Shiva" is known as a string literal 
+A string literal/string is a series of zero o more characters enclosed in single or double quotes.
+
+WHen javaScript variables are declared, they have an initial value of undefined, doing an operation on it gives you NaN(not a number). Concatenating a string with an undefined variable will produce a string of undefined 
+
+
+14/7/22
+Variable declarations
+Variable names are casesensitive. recommended to use camelCase for variable names.
+
+Note; the var keyword can easily overwrite variable declarations
+keyword let allows you to solve any potential problems arising from this
+let allows you to declare each specific variable name only once. variables can be modified, but cannot be redeclared.
+
+use const to declare read-only variables. Constant variables. Once they are declared, they cannot be reassigned, either as an operation or as a re-declaration/initialisation
+It is common to use uppercase for immutable variables and use lowercase or camelCase for mutable values like objects and arrays
+
+Number represents numeric data. Can be int or float.
+eg var myNumber=1;
+let ourNumber =3.345;
+const HOLYNUMBER= 0; 
+when "+" is put between two numbers, it repesents addition operator.
+
+NB. use console.log()  to print output. you can use + to concatenate variables and strings together directly, with no space is automatically put between the different arguments. 
+using "," to combine variables and strings for output puts space between the different arguments. 
+NOTE: It is possible to use a variable before declaring it if you use var to do the declaration. Doing the same with const and let causes error.
+
+
+use "-" for subtraction
+use " * " for multiplication
+use " /" for division
+use "++" to increment a variable(add one to it). eg. i++;
+use "--" to decrement a variable(subtract one from it). eg. i--;
+use "%" for remainder operator. nb very similar to the modulus operator, but doesn't work well with negative numbers
+nb use Math.floor() function to enclose any division where you want only the quotient, instead of decimal point things
+
+compound assignments
+do x+=23; instead of x = x+ 23;
+do x-=23; instead of x = x - 23;
+do same for multiplication and division
+
+Escape sequences
+use backslash plus something else to allow you to use characters you may not otherwise be able to type out. like using multiple quotes
+\'	single quote
+\"	double quote
+\\	backslash
+\n	newline
+\r	carriage return
+\t	tab
+\b	word boundary
+\f	form feed 
+eg
+const sampleStr = "Alan said, \"Peter is learning JavaScript\".";
+
+You can use double and single quotes alternately to do away with the escape quotes.
+const myStr = "<a href=\"http://www.example.com\" target=\"_blank\">Link</a>";
+
+or
+
+const myStr = '<a href="http://www.example.com" target="_blank">Link</a>';
+
+
+15/7/22
+Concatenating strings
+Use + for concatenation
+Note that concatenating does not add spaces between concatenated strings
+Use += also for concatenation
+eg
+let ourStr = "I come first. ";
+ourStr += "I come second.";
+When concatenating with variables, do not enclose said variables in quotes, nor should you separate them with commas
+You can also use+= with variables
+String Interpolation
+We can insert or interpolate variables into strings using template literals instead of concatenatioin
+let myPet = 'cat';
+console.log(`I own a pet ${myPet}`);
+Note that a template literal is wrapped by backticks. INside the literal, there is a placeholder which begins with the dollar sign.
+One of the biggest benefits of template literals is the imporved readability. You can more easily tell what the new string will be.
+Find length of a string
+ use .length after a string variable to find the number of characters in that string.
+eg
+console.log("Alan Peter".length);
+or 
+name = "me and my name";
+console.log(name.length);
+
+Use bracket notation to find character position
+Character counts start from 0. ie. Zero-based indexing
+eg
+const myName = "Charles";
+const firstLetter=myName[0];
+
+Note that you cannot change the individual letters of a string. It is immutable, BUT you can change the whole string to something else.
+
+NB; find the last character of a string with
+const lastLetter = myName[myName.length -1];
+find nth to last numberr using
+const lastLetter = myName[myName.length -n];
+
+Arrays
+Create an array by enclosing values separated by commas in a pair of square brackets, and assigning them to a variable.
+Note that arrays are mutable
+eg
+const sandwich = ["nice salad", "nkatepaste", "jelly", "bread", 4]
+
+
+Multidimensional array
+nest arrrays separated by commas, in another array to create a multidimensional array
+an array of arrays
+eg
+const teams = [["Bulls", 23], ["White Sox", 45]];
+
+Aray indexing
+Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array. Like strings, arrays use zero-based indexing, so the first element in an array has an index of 0.
+
+When you use brackets to access your array, the first set of brackets refers to the entries in the outer-most (the first level) array, and each additional pair of brackets refers to the next level of entries inside.
+
+const arr = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  [[10, 11, 12], 13, 14]
+];
+
+arr[3]; is   [[10, 11, 12], 13, 14]]
+arr[3][0];  is [10, 11, 12]
+arr[3][0][1];  is 11
+arr
+
+
+18/7/22
+Modify arrays
+eg 
+const ourArray = [3, 4, 5]
+ourArray[0] = 15;
+here the first array entry is changed to entry.
+
+Append data to the end or beginning of an array
+use .push() to append values to the end of the array
+use .unshift() to add values to the beginning of the array
+works like a python method.
+not that unshift() replaces first element with what you specify, while push() adds an element to the array
+eg
+const arr1 = [1, 2, 3];
+arr1.push(4); //adds 4 as the fourth array element
+arr.push([4, "hot", "cold"])
+
+
+manipulate an array 
+.pop()  removes the last item from the end of an array and returns that element. note that last element may be an array or a value
+eg 
+const threeArr = [1, 4, 6];
+const oneDown = threeArr.pop();
+console.log(oneDown);  // displays 6
+console.log(threeArr); //displays [1, 4]
+
+.shift()  does same with the first element instead of the last element
+
+
+Functions
+Create a function by declaring and defining like so: 
+function functionName(){
+console.log("Hello World);
+//and other lines of code
+}
+
+Invoke function 
+functionName();
+
+Function parameters
+Parameters are variables that act as placeholders for the values that are to be input to a function when it is called. When a function is defined, it is typically defined along with one or more parameters. The actual values that are input (or "passed") into a function when it is called are known as arguments.
+function myFunc(param1, param2){
+console.log(param1, param2);
+}
+
+use return to send a value back out of the function. eg to be assigned to a variable or somesuch container
+
+NB: use typeof a variable or raw data to determing the data type of anything
+
+Function variables
+variables defined outside a function have Global scope. variables created without let or const keywords are automatically created in the global scope and can create unintended consequences elsewhere when running a function again. always declare variables with let or const
+
+19/7/22
+Function Variables
+variables declared within a function as well as function parameters have local scope. only visible within the function
+When a local and a global variable have the same name, the local one takes precedence within the function.
+
+Undefined as a function output
+when there is no return statement, the value of the function/ the return value is undefined
+
+nb; use JSON.stringify() to convert something into a string
+In Computer Science a queue is an abstract Data Structure where items are kept in order. New items can be added at the back of the queue and old items are taken off from the front of the queue
+
+
+Boolean Values
+two values. true or false. 
+do not write these within quotes. doing that will make them normal string values
+
+
+If statement
+if (condition)
+{
+do this;
+}
+else
+{
+do this;
+}
+Note that without the else condition, nothing will be done if the if condition is false
+use else if for multiple conditions
+if (condition)
+{
+do this;
+}
+else if (condition)
+{
+do this;
+}
+
+else
+{
+do this;
+}
+
+
+Truthy and Falsy
+Note that using the if statement with a variable that has a boolean assigned to it lets you determine the outcome of the condition. 
+Sometimes yif you want to check if a variable exists but its not necessarily equal to a specific value, you only need to check to see if the variable has been assigned a value.
+eg
+let variable = "I exist"
+if(variable) {
+do something;}
+this condition will evaluate to true even though the value of variable is not explicitly true.
+This will evaluate to false if the variable is assigned falsy values.
+0
+Empty strings
+null
+undefined
+NaN
+
+Short circuit Evaluation
+avoiding if  condition using truthy or falsy values
+let username = '';
+let defaultName = username || 'Stranger';
+ 
+console.log(defaultName); // Prints: Stranger
+instead of
+let username = '';
+let defaultName;
+ 
+if (username) {
+  defaultName = username;
+} else {
+  defaultName = 'Stranger';
+}
+ 
+console.log(defaultName); // Prints: Stranger
+
+
+
+Comparison operators
+Note that to compare different datatypes, you must convert one type to another. this is called type coercion. The equality operator does type coercion and then compaes the values.
+Equality operator
+==
+
+Strict equality operator
+This does not perform type coercion
+===
+
+20/7/22
+
+Inequality operator
+!=
+opposite of the equality operator. also does tye coercion
+
+Strict Inequality operator
+!==
+
+Comparison operators
+does type coercion also
+>
+>=
+< 
+<=
+&& Logical and
+||  Logical or
+
+
+else, else if
+Note that order is important in if, else if statements. the functioin is executed from top to bottom so be careful what comes first.
+
+You can chain multiple else if statements
+
+21/7/22
+Switch and case
+use switch if you have many options to choose from. It tests a value and can have many case statements which define possible values. statements are executed from the first matched case value until a break is encountered
+eg
+switch(variable)
+{
+case "value1":
+do this;
+break;
+case "value2":
+do this;
+break;
+case "value3":
+do this;
+break;
+}
+Case values are tested with strict equality
+add default:  condition to be executed if none of the cases pass
+default: 
+do this;
+break;
+default should be the last statement
+another example
+let result = "";
+switch (val) {
+  case 1:
+  case 2:
+  case 3:
+    result = "1, 2, or 3";
+    break;
+  case 4:
+    result = "4 alone";
+}
+
+
+JavaScript Objects
+These are similar to arrays, but instead of using indices to access or modify their contents, you access data in objects through properties.
+Rather like python dictionaries
+eg. a cat object
+const cat = {
+"name": "Whiskers",
+"legs": 4,
+"tails": 1,
+"enemies": ["water", "dogs"]
+};
+the labels are what we call the properties. You can omit the quotes for single-word string properties. the properties can be numbers also.
+if your object has any non-string properties, JavaScript will automatically typecast them as strings
+
+Access opject properties
+Dot notation
+eg
+const property1 = cat.name;  //the value of property1 will be "Whiskers"
+We use dot notation when we know the name of the property we are trying to access already.
+
+Bracket notation
+if the property we are trying to access has a space in its name, use bracket notation. THough can also be used for properties without spaces in the name
+eg
+const property1 = cat["name"];
+
+
+Access object properties with variables[uses bracket notation]
+The property is stored as the value of a variable. do not use quotes around the variable name when using it to access the poperty.
+eg
+const dogs = {
+  Fido: "Mutt",
+  Hunter: "Doberman",
+  Snoopie: "Beagle"
+};
+
+const myDog = "Hunter";
+const myBreed = dogs[myDog];
+console.log(myBreed); //displays Doberman
+
+or
+
+const someObj = {
+  propName: "John"
+};
+
+function propPrefix(str) {
+  const s = "prop";
+  return s + str;
+}
+
+const someProp = propPrefix("Name");
+console.log(someObj[someProp]);
+
+25/7/22
+Updating Object Properties
+Update like you would any other variable. use either dot or bracket notation to update.
+
+Add new properties
+Do this the same way you would modify them
+eg
+ourDog.bark = "wow wow!!";
+or
+ourDog["bark"] = "wow wow!";
+
+Delete propeties
+use delete 
+eg
+delete ourDog.bark;
+
+Objects can be thought of as dictionaries(as i said earlier). You can use an object to lookup values, rather than a switch statement or an if/else chain. this is most useful when you know that your input data is limited to a certain range. 
+
+Test object for presence of property
+use the .hasOwnProperty() object method to determine if that object has the given property name. it returns true o false
+
+26/7/22
+
+Manipulating Complex Objects
+note that a JavaScript object is one way to handle flexible data. THey allow for abitrary combinations of strings, numbers, booleans, arrays, functions and objects.
+
+Access  Nested Objects
+sup-properties of objects can be accessed by chaining together the dot or bracket notation. Note that the sub object will be a property of the main object, and hence you access it also with the dot or bracket notations.
+eg
+ourStorage.cabinet["top drawer"].folder2;
+ourStorage.desk.drawer;
+
+Access Nested Arrays
+eg
+for an array containing two objects as the first and second items of the array, with the value of a property in those objects being another array 
+ourPets[0].names[1];
+ourPets[1].names[0];
+
+
+27/7/22
+still solving that question(record collection)
+
+
+29/7/22
+Loops
+While loops
+runs while a specified condition is true, and stops once its no longer true
+while(condition){
+do these things;
+}
+For loops
+eg
+for ( initialization; condition; update) {
+  do this;
+}
+note that if your condition is false at start, your loop won't do anything at all in the first place
+
+2/8/22
+Nesting for loops
+Do While loop
+ it will first do one pass of the code inside the loop no matter what, and then continue to run the loop while the specified condition evaluates to true.
+eg
+do {
+  statements;
+  statements;
+} while (condition);
+
+4/8/22
+Recursion
+the concept that a function can be expressed in terms of itself
+ start by thinking about the following task: multiply the first n elements of an array to create the product of those elements. Using a for loop, you could do this:
+
+  function multiply(arr, n) {
+    let product = 1;
+    for (let i = 0; i < n; i++) {
+      product *= arr[i];
+    }
+    return product;
+  }
+However, notice that multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]. That means you can rewrite multiply in terms of itself and never need to use a loop.
+
+  function multiply(arr, n) {
+    if (n <= 0) {
+      return 1;
+    } else {
+      return multiply(arr, n - 1) * arr[n - 1];
+    }
+  }
+The recursive version of multiply breaks down like this. In the base case, where n <= 0, it returns 1. For larger values of n, it calls itself, but with n - 1. That function call is evaluated in the same way, calling multiply again until n <= 0. At this point, all the functions can return and the original multiply returns the answer.
+eg count up with recursion
+function countup(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const countArray = countup(n - 1);
+    countArray.push(n);
+    return countArray;
+  }
+}
+
+eg count down with recursion
+function countdown(n){
+  if (n<1){
+    return [];
+  }
+  else{
+  const arr = countdown(n-1);
+  arr.unshift(n);
+  return arr;
+  }
+}
+
+Note: Recursive functions must have a base case when they return without calling the function again (in this example, when n <= 0), otherwise they can never finish executing.
+
+
+7/8/22
+Create random Fractions
+use  Math.random() to create a random decimal number between 0 inclusive and 1 exclusive. ie It wil never return a 1 but may retun a 0
+Create random whole numbers
+multiplying by another number will give you result between 0 and thsat number. use Math.floor() to round down and get whole numbers
+eg
+Math.floor(Math.random() * 20);
+
+Create a random number within a range
+Math.floor(Math.random() * (max - min + 1)) + min
+
+
+Convert string to Int
+Use parseInt("string", radix);
+If the string cannot be converted to a number, it returns NaN
+radix is the number in the string. Can be an integer between 2 and 36. The function then converts the number into base 10
+
+Consitional or Ternary operator
+condition?  do this: else do this
+
+Multiple ternary
+function findGreaterOrEqual(a, b) {
+  return (a === b) ? "a and b are equal" 
+    : (a > b) ? "a is greater" 
+    : "b is greater";
+}
+It is considered best practice to format multiple conditional operators such that each condition is on a separate line, as shown above. Using multiple conditional operators without proper indentation may make your code hard to read.
+
+
+9/8/22
+ES6
+ECMAScript is a standardized version of JavaScript. Came in 2015. All previous is ES5, finalized in 2009.
+
+
+set timeout and learn svgs
