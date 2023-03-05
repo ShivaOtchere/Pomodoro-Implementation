@@ -1,3 +1,105 @@
+@font-face {
+    font-family: 'robotoSlab';
+    src: url(fonts/Roboto_Slab/static/RobotoSlab-Regular.ttf) format(truetype);
+}
+@font-face {
+    font-family: 'spaceMono';
+    src: url(fonts/Space_Mono/SpaceMono-Regular.ttf) format(truetype);
+}
+@font-face {
+    font-family: 'kumbhSans';
+    src: url(fonts/Kumbh_Sans/static/KumbhSans-Regular.ttf) format(truetype);
+}
+
 body{
-    background-color: rgb(30,33,63);
+    position: relative;
+    width: 1440px;
+    height: 800px;
+    background-color : rgb(30,33,63);
+}
+
+#titleSVG{
+    position: absolute;
+    left: 642px;
+    top: 48px;
+}
+
+#timerTypes{
+    position: absolute;
+    left: 543px;
+    top: 135px;
+    width: 373px;
+    height: 63px;
+    border-radius: 50px;
+    background-color: #161932;
+    
+}
+
+.timerText{
+    color: #D7E0FF;
+    font-family: 'robotoSlab', serif;
+    font-size: 14px;
+    width: 77px;
+    height: 18px;
+    position: absolute;
+    top: 23px;
+    bottom: 22px;
+}
+#pomo{
+    left: 30px;
+}
+#short{
+    left: 154.33px;
+}
+#long{
+    left: 278.66px;
+}
+
+#controlsWrap{
+    position: relative;
+    height: 410px;
+    width: 410px;
+    border-radius: 100%;
+    background-color: linear-gradient(315deg, #2E325A 0%, #0E112A 100%);
+    box-shadow:-50px -50px 100px #272C5A, 50px 50px 100px #121530;
+    position: relative;
+    top:265px;  /*check from design files*/
+    left:537px;
+}
+#controls{
+    height: 366px;
+    width: 366px;
+    background-color:#161932;
+    border-radius: 100%;
+    position:absolute;
+    top: 22px;
+    left: 22px;
+    
+}
+#controlFont{
+    /*position: absolute;
+    top:259px;
+    left:127px;
+    height:18px;
+    width:71px;
+    font-family: 'kumbhSans', monospace;
+    color: #D7E0FF;
+    letter-spacing: 15px;*/
+    
+position: absolute;
+height: 20px;
+left: 36.34%;
+right: 36.1%;
+top: calc(50% - 20px/2 + 86px);
+
+font-family: 'kumbhSans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 20px;
+/* identical to box height */
+
+letter-spacing: 15px;
+
+color: #D7E0FF;
 }
