@@ -37,7 +37,7 @@ body{
 
 .timerText{
     color: #D7E0FF;
-    font-family: 'robotoSlab', serif;
+    font-family: 'kumbhSans', serif;
     font-size: 14px;
     width: 77px;
     height: 18px;
@@ -60,11 +60,11 @@ body{
     height: 410px;
     width: 410px;
     border-radius: 100%;
-    background-color: linear-gradient(315deg, #2E325A 0%, #0E112A 100%);
+    background:linear-gradient(315deg, #2E325A 0%, #0E112A 100%);
     box-shadow:-50px -50px 100px #272C5A, 50px 50px 100px #121530;
     position: relative;
-    top:265px;  /*check from design files*/
-    left:537px;
+    top:243px;  /*used the timerTypes position to calculate. ie. [ (controlsWrap width-timerTypes width)/2 ] - starting point of timerTypes*/
+    left:524.5px;
 }
 #controls{
     height: 366px;
@@ -86,20 +86,221 @@ body{
     color: #D7E0FF;
     letter-spacing: 15px;*/
     
-position: absolute;
-height: 20px;
-left: 36.34%;
-right: 36.1%;
-top: calc(50% - 20px/2 + 86px);
+    position: absolute;
+    height: 25px;
+    width:125px;
+    left: 36.34%;
+    right: 36.1%;
+    top: calc(50% - 20px/2 + 86px);
 
-font-family: 'kumbhSans';
-font-style: normal;
-font-weight: 700;
-font-size: 16px;
-line-height: 20px;
-/* identical to box height */
+    font-family: 'kumbhSans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
 
-letter-spacing: 15px;
+    letter-spacing: 15px;
+    color: #D7E0FF;
+    background-color:#161932;
+    border-width:0px;
+}
 
-color: #D7E0FF;
+#setSVG{
+    position: absolute;
+    left: 705.23px;
+    top: 716px;
+}
+
+#settings{
+    background: #FFFFFF;
+    border-radius: 25px;
+    height: 464px;
+    width: 540px;
+    position: relative;
+}
+.divi{
+    height:1px;
+    background: #e3e1e1;
+}
+#divi1{
+    width:540px;
+    position: absolute;
+    top: 93px;
+    bottom:370px;
+}
+#divi2{
+    width: 460px;
+    position: absolute;
+    top: 251px;
+    bottom:212px;
+    left:40px;
+    right: 40px;
+}
+#divi3{
+    width: 460px;
+    position: absolute;
+    top: 340px;
+    bottom:123px;
+    left: 40px;
+    right: 40px;
+}
+
+#setHead{
+    width: 109px;
+    height: 28px;
+    position: absolute;
+    top: 34px;
+    left: 40px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 35px;
+    
+}
+.setText{
+    font-family: 'kumbhSans';
+    color: #161932;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 5px;
+}
+.minuteText{
+    font-family: "kumbhSans";
+    color: #EFF1FA;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0px;
+    color: #1E213F;
+
+    mix-blend-mode: normal;
+    opacity: 0.4;
+}
+
+#closeSVG{
+    position: absolute;
+    top: 47.64px;
+    left: 488.64px;
+    height: 14px;
+    width: 14px;
+ 
+}
+#timeTypes{
+    width: 462px;
+    height: 109px;
+    position: absolute;
+    top: 118px;
+    left: 40px;
+}
+#pomTimer{
+    position: absolute;
+    left: 40px;
+    top: 157px;
+    width: 140px;
+    height: 70px;
+}
+#shortTimer{
+    position: absolute;
+    left: 200px;
+    top: 157px;
+    width: 140px;
+    height: 70px;
+}
+#longTimer{
+    position: absolute;
+    left: 362px;
+    top: 157px;
+    width: 140px;
+    height: 70px;
+}
+.input{
+    height:48px;
+    width: 140px;
+    background: #EFF1FA;
+    border-radius: 10px;
+    border-width: 0px;
+    color: #1E213F;
+}
+#font{
+    height: 40px;
+    width: 462px;
+    position: absolute;
+    top: 276px;
+    right: 38px;
+}
+
+.choice{
+    height: 40px;
+    width: 40px;
+    border-width: 0px;
+    border-radius: 100%;
+}
+#kumbh{
+    position: absolute;
+    left:350px;
+    top: 276px;
+    background: #161932;
+    color: #FFFFFF;
+    font-family: "kumbhSans";
+}
+#mono{
+    position: absolute;
+    left:401px;
+    top: 276px;
+    background: #EFF1FA;
+    color: #1E213F;
+    font-family: "spaceMono";
+}
+#roboto{
+    position: absolute;
+    left:462px;
+    top: 276px;
+    background: #EFF1FA;
+    color: #1E213F;
+    font-family: "robotoSlab";
+}
+#sampleText{
+    position: absolute;
+    left: 10px;
+    bottom: 1px;
+}
+#colour{
+    height: 40px;
+    width: 462px;
+    position: absolute;
+    top: 365px;
+    right: 38px;
+}
+#red{
+    position: absolute;
+    left: 350px;
+    top: 365px;
+    background: #F87070;
+}
+#green{
+    position: absolute;
+    left:401px;
+    top: 365px;
+    background: #70F3F8;
+}
+#purple{
+    position: absolute;
+    left:462px;
+    top: 365px;
+    background: #D881F8;
+}
+#apply{
+    width: 140px;
+    height: 53px;
+    border-radius:;
+    position: absolute;
+    top: 437px;
+    left: 201px; 
+    background: #f87070;
+    border-radius: 26.5px;
+    border-width: 0px;
 }
