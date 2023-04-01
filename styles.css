@@ -39,11 +39,14 @@ body{
     color: #D7E0FF;
     font-family: 'kumbhSans', serif;
     font-size: 14px;
-    width: 77px;
-    height: 18px;
     position: absolute;
     top: 23px;
     bottom: 22px;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    mix-blend-mode: normal;
+    opacity: 0.4;
 }
 #pomo{
     left: 30px;
@@ -119,6 +122,9 @@ body{
     width: 540px;
     position: relative;
 }
+#settings:hover{
+    cursor: pointer;
+}
 .divi{
     height:1px;
     background: #e3e1e1;
@@ -128,6 +134,7 @@ body{
     position: absolute;
     top: 93px;
     bottom:370px;
+    background: red;
 }
 #divi2{
     width: 460px;
@@ -136,6 +143,7 @@ body{
     bottom:212px;
     left:40px;
     right: 40px;
+    background: red;
 }
 #divi3{
     width: 460px;
@@ -144,6 +152,7 @@ body{
     bottom:123px;
     left: 40px;
     right: 40px;
+    background: red;
 }
 
 #setHead{
@@ -179,6 +188,7 @@ body{
 
     mix-blend-mode: normal;
     opacity: 0.4;
+
 }
 
 #closeSVG{
@@ -296,11 +306,204 @@ body{
 #apply{
     width: 140px;
     height: 53px;
-    border-radius:;
+    border-radius:0px;
     position: absolute;
     top: 437px;
     left: 201px; 
     background: #f87070;
     border-radius: 26.5px;
     border-width: 0px;
+    color: #FFFFFF;
+    font-family: "kumbhSans";
+}
+
+/*Tablet size mods*/
+@media(max-width: 768px){
+    body{
+        width: 768px;
+        height: 1024px;
+    }
+
+    #titleSVG{
+        
+        left: 306px;
+        top: 80px;
+    }
+    #timerTypes{
+        top: 167px;
+        left: 198px;
+    }
+    #controlsWrap{
+        left: 179px;
+        top: 339px;
+    }
+    #setSVG{
+        left: 369px;
+        top: 893px;
+    }
+}
+/*Phone size mods*/
+@media(max-width: 375px){
+    body{
+        max-width: 375px;
+        height: 667px;
+    }
+
+    #titleSVG{
+        width:117px;
+        height: 24px;
+        left: 128.5px;
+        top: 32px;
+    }
+    
+    #timerTypes{
+        width: 327px;
+        height: 63px;
+        top: 101px;
+        left: 24px;
+        position: relative;
+    }
+    
+    .timerText{
+        font-size: 12px;
+        line-height: 15px;
+    }
+    #pomo{
+        position: absolute;
+        left: 28.93px;
+        top: 26px;
+    }
+    #short{
+        position: absolute;
+        top: 26px;
+        left: 131.02px;
+    }
+    #long{
+        position: absolute;
+        top: 26px;
+        left: 235.12px;
+    }
+    #controlsWrap{
+        width: 300px;
+        height: 300px;
+        left: 38px;
+        top: 212px;
+    }
+    #controls{
+        height: 267.8px;
+        width: 267.8px;   
+    }
+    #setSVG{
+        height: 28px;
+        width: 28px;
+        left: 173px;
+        top: 591px;
+    }
+    #settings{
+        width:327px;
+        height: 549px;
+        top: 46px;
+        left: 24px;
+        right: 24px;
+        bottom: 72px;
+    }
+    #setHead{
+        height: 20px;
+        left: 24px;
+        right: 68.81%;
+        top: 24px;
+        font-size: 20px;
+        line-height: 25px;
+    }
+    #closeSVG{
+        left: 289px;
+        top: 29px;
+    }
+    #divi1{
+        width:327px;
+        top: 72px;
+        bottom: 476px;
+    }
+    #timeTypes{
+        width: 152px;
+        height: 11px;
+        top: 97px;
+        left: 93px;
+        font-size: 11px;
+        line-height: 14px;
+        text-align: center;
+        letter-spacing: 4.23077px;
+    }
+    #pomTimer{
+        left: 23px;
+        top: 141px;
+    }
+    #shortTimer{
+        left: 23px;
+        top: 189px;
+    }
+    #longTimer{
+        left: 23px;
+        top: 237px;
+    }
+    .input{
+        width: 140px;
+        height: 40px;
+        position: absolute;
+        bottom: 40px;
+        left: 140px;
+        color: #000000;
+        background-color: rgba(128,128,128,0.5);
+    }
+    /*#pomInput{
+        background-color: red;
+    }
+    #shortInput{
+        background-color: yellow;
+    }
+    #longInput{
+        background-color: green;
+    }*/
+    #divi2{
+        width: 280px;
+        top: 286px;
+        bottom: 262px;
+        left:24px;
+        right: 23px;
+    }
+    #font{
+        width: 327px;
+        left: 0px;
+        text-align: center;
+        top: 296px;/*286px*/
+    }
+    #fontChoice{
+        position: absolute;
+        left: -257px;
+        top: 60px;
+    }
+    #divi3{
+        width: 280px;
+        top: 404px;
+        bottom: 144px;
+        left: 24px;
+        right: 23px;
+    }
+    #colour{
+        width: 327px;
+        left: 0px;
+        text-align: center;
+        top: 414px;/*404px*/
+    }
+    #colourChoice{
+        position: absolute;
+        left: -257px;
+        top: 80px;
+    }
+    #apply{
+        position: absolute;
+        top: 522.5px;
+        left: 93.5px;
+    }
+
 }
