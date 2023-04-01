@@ -343,9 +343,9 @@ body{
     }
 }
 /*Phone size mods*/
-@media(max-width: 375px){
+@media(max-width: 275px){
     body{
-        max-width: 375px;
+        max-width: 275px;
         height: 667px;
     }
 
